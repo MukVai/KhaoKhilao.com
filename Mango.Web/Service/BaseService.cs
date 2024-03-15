@@ -9,8 +9,7 @@ namespace Mango.Web.Service
 {
     public class BaseService : IBaseService
     {
-        private readonly IHttpClientFactory _httpClientFactory; // to make api calls 
-
+        private readonly IHttpClientFactory _httpClientFactory; // to handle any HTTP requests
         public BaseService(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
