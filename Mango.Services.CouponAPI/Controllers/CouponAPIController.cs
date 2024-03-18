@@ -78,7 +78,7 @@ namespace Mango.Services.CouponAPI.Controllers
             try
             {
                 Coupon obj = _mapper.Map<Coupon>(coupondto);
-                _db.Add(obj);
+                _db.Coupons.Add(obj);
                 _db.SaveChanges();
                 _response.Result = _mapper.Map<CouponDTO>(obj);
             }
@@ -96,7 +96,7 @@ namespace Mango.Services.CouponAPI.Controllers
             try
             {
                 Coupon obj = _mapper.Map<Coupon>(coupondto);
-                _db.Update(obj);
+                _db.Coupons.Update(obj);
                 _db.SaveChanges();
 
                 _response.Result = _mapper.Map<CouponDTO>(obj);
@@ -110,7 +110,8 @@ namespace Mango.Services.CouponAPI.Controllers
         }
 
         [HttpDelete]
-        public ResponseDTO Delete([FromBody] int id)
+        [Route("{id:int}")]
+        public ResponseDTO Delete(int id)
         {
             try
             {
