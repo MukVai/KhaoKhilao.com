@@ -12,10 +12,12 @@ namespace Mango.Services.AuthAPI.Services
         // for identity helper methods to take care of all auth related complexity, like creating user, assigning roles, securing passwords, etc
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IJWTTokenGenerator _jwtTokenGenerator;
 
-        public AuthService(ApplicationDBContext db, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+        public AuthService(ApplicationDBContext db, IJWTTokenGenerator jWTTokenGenerator, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _db = db;
+            _jwtTokenGenerator = jWTTokenGenerator; 
             _userManager = userManager;
             _roleManager = roleManager;
         }
@@ -31,6 +33,8 @@ namespace Mango.Services.AuthAPI.Services
             }
 
             // if user is found, generate jwt token
+            var token = _jwtTokenGenerator.GenerateToken(user);
+
             UserDTO userDTO = new()
             {
                 Email = user.Email,
@@ -42,7 +46,7 @@ namespace Mango.Services.AuthAPI.Services
             LoginResponseDTO loginResponseDTO = new LoginResponseDTO()
             {
                 User = userDTO,
-                Token = ""
+                Token = token
             };
 
             return loginResponseDTO;
@@ -74,7 +78,7 @@ namespace Mango.Services.AuthAPI.Services
                         PhoneNumber = userToReturn.PhoneNumber
                     };
 
-                    return "user created successfully";
+                    return "";
                 }
                 else
                 {
