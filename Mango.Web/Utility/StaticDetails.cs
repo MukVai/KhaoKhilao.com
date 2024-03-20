@@ -2,7 +2,8 @@
 {
     public class StaticDetails
     {
-        public  static string CouponAPIBase { get; set; }   // base url for couponAPI => populated in program.cs, when services are being confirgured
+        public  static string CouponAPIBase { get; set; }   // base url for couponAPI => populated in program.cs, when services are being configured
+        public static string AuthAPIBase { get; set; }
         public enum ApiType{
             GET, POST, PUT, DELETE
         }

@@ -14,6 +14,7 @@ builder.Services.AddHttpClient<ICouponService, CouponService>();
 
 // for CouponAPI base Url
 StaticDetails.CouponAPIBase = builder.Configuration["ServiceUrls:CouponAPI"];
+StaticDetails.AuthAPIBase = builder.Configuration["ServiceUrls:AuthAPI"];
 // register for DI
 builder.Services.AddScoped<IBaseService, BaseService>();    
 builder.Services.AddScoped<ICouponService, CouponService>();
