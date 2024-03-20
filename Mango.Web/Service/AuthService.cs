@@ -29,7 +29,7 @@ namespace Mango.Web.Service
             {
                 ApiType = StaticDetails.ApiType.POST,
                 Data = loginRequestDTO,
-                Url = StaticDetails.AuthAPIBase + "/api/login"
+                Url = StaticDetails.AuthAPIBase + "/api/auth/login"
             });
         }
 
@@ -39,7 +39,7 @@ namespace Mango.Web.Service
             {
                 ApiType = StaticDetails.ApiType.POST,
                 Data = registrationRequestDTO,
-                Url = StaticDetails.AuthAPIBase + "/api/register"
+                Url = StaticDetails.AuthAPIBase + "/api/auth/register"
             });
         }
     }
