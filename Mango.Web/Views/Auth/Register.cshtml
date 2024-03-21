@@ -11,9 +11,6 @@
             </div>
         </div>
         <div class="card-body p-4">
-            <div class=" row text-center">
-                <div asp-validation-summary="All" class=" text-danger"></div>
-            </div>
             <div class="row pb-3">
                 <div class="col-12 col-md-6 offset-md-3 pb-2">
                     <input asp-for="Email" class="form-control" placeholder="Email" />
@@ -43,3 +40,8 @@
         </div>
     </div>
 </form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
