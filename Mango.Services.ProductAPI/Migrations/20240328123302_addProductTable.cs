@@ -7,7 +7,7 @@
 namespace Mango.Services.ProductAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class addProductAndSeedTable : Migration
+    public partial class addProductTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
