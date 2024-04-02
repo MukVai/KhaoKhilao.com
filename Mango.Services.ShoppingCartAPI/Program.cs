@@ -25,8 +25,10 @@ builder.Services.AddSingleton(mapper);  // register it
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());    // for dependency injection
 
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICouponService, CouponService>();
 // add an http client for product with the base url as mentioned
 builder.Services.AddHttpClient("Product", u => u.BaseAddress = new Uri(builder.Configuration["ServiceUrls:ProductAPI"]));
+builder.Services.AddHttpClient("Coupon", u => u.BaseAddress = new Uri(builder.Configuration["ServiceUrls:CouponAPI"]));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
