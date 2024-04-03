@@ -5,6 +5,7 @@
         public  static string CouponAPIBase { get; set; }   // base url for couponAPI => populated in program.cs, when services are being configured
         public  static string ProductAPIBase { get; set; }   // base url for couponAPI => populated in program.cs, when services are being configured
         public static string AuthAPIBase { get; set; }
+        public static string ShoppingCartAPIBase { get; set; }
 
         public const string RoleAdmin = "ADMIN";
         public const string RoleCustomer = "CUSTOMER";
