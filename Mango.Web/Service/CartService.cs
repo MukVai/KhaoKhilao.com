@@ -19,7 +19,7 @@ namespace Mango.Web.Service
             {
                 ApiType = StaticDetails.ApiType.POST,
                 Data = cartDto,
-                Url = StaticDetails.ShoppingCartAPIBase + "api/cart/ApplyCoupon"
+                Url = StaticDetails.ShoppingCartAPIBase + "/api/cart/ApplyCoupon"
             });
         }
 
@@ -28,7 +28,7 @@ namespace Mango.Web.Service
             return await _baseService.SendAsync(new RequestDTO()
             {
                 ApiType = StaticDetails.ApiType.GET,
-                Url = StaticDetails.ShoppingCartAPIBase + "api/cart/GetCart/" + userId
+                Url = StaticDetails.ShoppingCartAPIBase + "/api/cart/GetCart/" + userId
             });
         }
 
@@ -38,7 +38,7 @@ namespace Mango.Web.Service
             {
                 ApiType = StaticDetails.ApiType.POST,
                 Data = cartDetailsId,
-                Url = StaticDetails.ShoppingCartAPIBase + "api/cart/RemoveCart"
+                Url = StaticDetails.ShoppingCartAPIBase + "/api/cart/RemoveCart"
             });
         }
 
@@ -49,7 +49,7 @@ namespace Mango.Web.Service
             {
                 ApiType = StaticDetails.ApiType.POST,
                 Data = cartDto,
-                Url = StaticDetails.ShoppingCartAPIBase + "api/cart/CartUpsert"
+                Url = StaticDetails.ShoppingCartAPIBase + "/api/cart/CartUpsert"
             });
         }
     }
