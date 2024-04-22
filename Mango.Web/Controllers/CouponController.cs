@@ -34,7 +34,7 @@ namespace Mango.Web.Controllers
         {
             return View();
         }
-
+    
 
         //post
         [HttpPost]
